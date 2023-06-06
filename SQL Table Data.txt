@@ -1,0 +1,50 @@
+-- Online SQL Editor to Run SQL Online.
+-- Use the editor to create new tables, insert data and all other SQL operations.
+  -------------------creating a table for movie detail-----------------
+CREATE TABLE Movies (
+    ID Primary key,
+    Title Text,
+    Image Text,
+    Video Text,
+    Year Integer,
+    Director Text,
+  	Genre Text
+);
+
+Insert into Movies values(1, "The Pursuit of Happyness", "https://www.themoviebuff.net/wp-content/uploads/2017/09/the-pursuit-of-happyness.jpg", "https://www.bing.com/videos/search?q=the+pursuit+of+happyness+trailer&view=detail&mid=ECBA10DEEA2CCA8D53FDECBA10DEEA2CCA8D53FD&FORM=VIRE", 2006, "Gabriele Muccino", "Drama");
+Insert into Movies values(2, "Sivaji", "https://www.teahub.io/photos/full/314-3145525_sivaji-is-a-2007-tamil-political-thriller-film.jpg", "https://www.bing.com/videos/search?q=sivaji+the+boss+trailer&&view=detail&mid=2A144457A7A7401175D12A144457A7A7401175D1&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Dsivaji%2Bthe%2Bboss%2Btrailer%26FORM%3DHDRSC4", 2007, "Shankar", "Action, Drama");
+Insert into Movies values(3, "Gemini Man", "https://th.bing.com/th/id/OIP.IteUSQmNVF6ArVZMz_eZegHaK-?pid=ImgDet&rs=1", "https://www.bing.com/videos/search?q=gemini+man&&view=detail&mid=DBEF991125A1701DD79BDBEF991125A1701DD79B&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Dgemini%2Bman%26FORM%3DHDRSC4", 2019, "Ang Lee", "Action Adventure Sci-Fi");
+
+-------------------------------------craeting a table for Reviews--------------------------------------
+create table Review (
+  ID primary key,
+  Movie Name Text,
+Reviewer Name Text,
+  Ratting float,
+  Wordics Text
+);
+
+Insert into Review values(1, "The Pursuit of Happyness", "Dhamo", 9, "Excelent");
+Insert into Review values(2, "Sivaji", "Karthi", 9, "Excelent");
+Insert into Review values(3, "Gemini Man", "Dhamo", 7.5, "Good");
+
+
+---------------------------------------creating artist details----------------------------------
+Create table Artist (
+ ID primary key,
+  Movie Name Text,
+  Artist Name Text,
+  Skills Text,
+  Roles Text
+);
+Insert into Artist values (1, "The Pursuit of Happyness", "Will Smith", "Acting Producing", "Hero");
+Insert into Artist values(2, "Sivaji", "Rajnikanth", "Acting Producing", "Hero");
+Insert into Artist values (3, "Gemini Man", "Will Smith", "Acting Producing", "Hero Villan");
+
+--------------------------------------Joing the tables-----------------------------------
+SELECT *
+  FROM Movies
+  JOIN Artist
+  ON Movies.ID = Artist.ID
+  JOIN Review
+  ON Artist.ID = Review.ID;
